@@ -2,18 +2,53 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+            <style>
+                .container {
+                    max-width: 960px;
+                }
+            </style>
         {% endblock %}
+
+        
+    </head>
+    <body class="bg-light">
+        <div class="container">
+            <main>
+                <div class="pt-5 pb-1 text-center">
+                    <h1>TCC</h1>
+                    <p class="lead">Teste cadastro de clientes</p>
+                </div>
+                <hr>
+            </main>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success" onclick="$(this).hide()" style="cursor:pointer;font-size:20px;text-align:center;position:fixed;top:30%;left:30%;width:40%;z-index:1;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+            {% block body %}{% endblock %}
+            
+            <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">by Uemerson A. Santana</p>
+            </footer>
+        </div>
+        
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script type="text/javascript">
+                setTimeout(function() {
+                    $('.alert-success').fadeOut('fast');
+                }, 1500); // <-- time in milliseconds
+            </script>
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
     </body>
 </html>

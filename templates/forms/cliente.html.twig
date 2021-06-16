@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tcc - {{titulo}}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>{{titulo}}</h3>
+        </div>
+    </div>
+    <hr>
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a class="btn btn-default" href="/" role="button">Cancelar</a>
+                <button type="submit" value="save" class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}
