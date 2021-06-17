@@ -3,6 +3,8 @@ Teste cadastro de clientes
 
 ## Instruções ##
 
+Exemplo: https://tcc.uemerson.com
+
 <ol>
   <li>Clone o repositório</li>
   <li>Rode o comando <code>composer update</code> dentro da pasta raiz</li>
@@ -21,3 +23,4 @@ Teste cadastro de clientes
       <li>collate: utf8mb4_unicode_ci</li>
     </ul>
 </ul>
+
