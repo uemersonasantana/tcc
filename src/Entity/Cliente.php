@@ -89,7 +89,7 @@ class Cliente
         return $this->dt_nasc;
     }
 
-    public function setDtNasc(\DateTimeInterface $dt_nasc): self
+    public function setDtNasc(\DateTimeInterface $dt_nasc = null): self
     {
         $this->dt_nasc = $dt_nasc;
 
