@@ -1,7 +1,7 @@
 # TCC
 Teste cadastro de clientes
 
-## Instruções para instação ##
+## Instruções ##
 
 <ol>
   <li>Clone o repositório</li>
